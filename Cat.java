@@ -1,13 +1,13 @@
 
 public class Cat
 {
-
     private double originWeight;
     private double weight;
 
     private double minWeight;
     private double maxWeight;
     private double foodWeight;
+    private static int count;
 
     public Cat()
     {
@@ -16,28 +16,56 @@ public class Cat
         minWeight = 1000.0;
         maxWeight = 9000.0;
         foodWeight = 0;
+        this.count ++;
     }
+
+    public static int getCount () {
+        return count;
+    }
+
     public void pee()
     {
-        weight = weight - weight / 150;
-        System.out.println("Кошка сходила в туалет");
+        if (weight < minWeight || weight > maxWeight) {
+            this.count --;
+            System.out.println("Кошка умерла и не может ходить в туалет");
+        }
+        else {
+            weight = weight - weight / 150;
+            System.out.println("Кошка сходила в туалет");
+        }
     }
 
     public void meow()
     {
-        weight = weight - 1;
-        System.out.println("Meow");
+        if (weight < minWeight || weight > maxWeight) {
+            this.count --;
+        }
+        else {
+            weight = weight - 1;
+            System.out.println("Meow");
+        }
     }
 
     public void feed(Double amount)
     {
+        if (weight < minWeight || weight > maxWeight) {
+            this.count --;
+            System.out.println("Кошка умерла и не может есть");
+        }
+        else {
         foodWeight += amount;
-        weight = weight + amount;
+        weight = weight + amount; }
     }
 
     public void drink(Double amount)
     {
-        weight = weight + amount;
+        if (weight < minWeight || weight > maxWeight) {
+            this.count --;
+            System.out.println("Кошка умерла и не может пить");
+        }
+        else {
+            weight = weight + amount;
+        }
     }
 
     public double getWeight()
@@ -55,6 +83,7 @@ public class Cat
             return "Dead";
         }
         else if(weight > maxWeight) {
+
             return "Exploded";
         }
         else if(weight > originWeight) {
