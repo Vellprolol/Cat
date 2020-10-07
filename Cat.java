@@ -3,20 +3,28 @@ public class Cat
 {
     private double originWeight;
     private double weight;
-
-    private double minWeight;
-    private double maxWeight;
     private double foodWeight;
     private static int count;
+    private static final double MIN_WEIGHT = 1000;
+    private static final double MAX_WEIGHT = 9000;
+    private static final int NUMBER_OF_EYES = 2;
+
 
     public Cat()
     {
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
-        minWeight = 1000.0;
-        maxWeight = 9000.0;
         foodWeight = 0;
         this.count ++;
+    }
+
+
+    public void setColour (Colours colour) {
+
+    }
+
+    public static int getNumberOfCatEyes () {
+        return NUMBER_OF_EYES;
     }
 
     public static int getCount () {
@@ -25,7 +33,7 @@ public class Cat
 
     public void pee()
     {
-        if (weight < minWeight || weight > maxWeight) {
+        if (weight < MIN_WEIGHT || weight > MAX_WEIGHT) {
             this.count --;
             System.out.println("Кошка умерла и не может ходить в туалет");
         }
@@ -37,7 +45,7 @@ public class Cat
 
     public void meow()
     {
-        if (weight < minWeight || weight > maxWeight) {
+        if (weight < MIN_WEIGHT || weight > MAX_WEIGHT) {
             this.count --;
         }
         else {
@@ -48,7 +56,7 @@ public class Cat
 
     public void feed(Double amount)
     {
-        if (weight < minWeight || weight > maxWeight) {
+        if (weight < MIN_WEIGHT || weight > MAX_WEIGHT) {
             this.count --;
             System.out.println("Кошка умерла и не может есть");
         }
@@ -59,7 +67,7 @@ public class Cat
 
     public void drink(Double amount)
     {
-        if (weight < minWeight || weight > maxWeight) {
+        if (weight < MIN_WEIGHT || weight > MAX_WEIGHT) {
             this.count --;
             System.out.println("Кошка умерла и не может пить");
         }
@@ -79,10 +87,10 @@ public class Cat
 
     public String getStatus()
     {
-        if(weight < minWeight) {
+        if(weight < MIN_WEIGHT) {
             return "Dead";
         }
-        else if(weight > maxWeight) {
+        else if(weight > MAX_WEIGHT) {
 
             return "Exploded";
         }
