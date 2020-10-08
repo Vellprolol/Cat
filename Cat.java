@@ -1,6 +1,7 @@
 
 public class Cat
 {
+    public static Object getKitten;
     private double originWeight;
     private double weight;
     private double foodWeight;
@@ -8,7 +9,7 @@ public class Cat
     private static final double MIN_WEIGHT = 1000;
     private static final double MAX_WEIGHT = 9000;
     private static final int NUMBER_OF_EYES = 2;
-
+    private static double kittenWeight;
 
     public Cat()
     {
@@ -17,6 +18,19 @@ public class Cat
         foodWeight = 0;
         this.count ++;
     }
+
+    public Cat(double kittenWeight) {
+        this();
+    this.weight = 1100;
+   originWeight = weight;
+    }
+
+    public static Cat getKitten() {
+        Cat kitten = new Cat(1100);
+        return kitten;
+    }
+
+
 
 
     public void setColour (Colours colour) {
