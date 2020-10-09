@@ -3,5 +3,6 @@ public enum Colours {
     White,
     Brown,
     Grey,
-    Red
+    Red;
+
 }

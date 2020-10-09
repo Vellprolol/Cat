@@ -10,6 +10,7 @@ public class Cat
     private static final double MAX_WEIGHT = 9000;
     private static final int NUMBER_OF_EYES = 2;
     private static double kittenWeight;
+    private String colour;
 
     public Cat()
     {
@@ -33,7 +34,11 @@ public class Cat
 
 
 
-    public void setColour (Colours colour) {
+    public Colours getColour(Colours colour) {
+        return colour;
+    }
+
+    public enum setColour {
 
     }
 
