@@ -9,8 +9,6 @@ public class Cat
     private static final double MIN_WEIGHT = 1000;
     private static final double MAX_WEIGHT = 9000;
     private static final int NUMBER_OF_EYES = 2;
-    private static double kittenWeight;
-    private String colour;
 
     public Cat()
     {
@@ -20,7 +18,12 @@ public class Cat
         this.count ++;
     }
 
-    public Cat(double kittenWeight) {
+    public Cat (double weight, Colours colour) {
+        this.weight = 3500;
+        colour = Colours.BROWN;
+    }
+
+    public Cat(double weight) {
         this();
     this.weight = 1100;
    originWeight = weight;
@@ -31,7 +34,9 @@ public class Cat
         return kitten;
     }
 
-
+    public void setWeight (double weight) {
+        this.weight = weight;
+    }
 
 
     public Colours getColour(Colours colour) {

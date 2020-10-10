@@ -1,8 +1,8 @@
 public enum Colours {
-    Black,
-    White,
-    Brown,
-    Grey,
-    Red;
+  BROWN,
+    WHITE,
+    BLACK,
+    GREY,
+    RED
 
 }
